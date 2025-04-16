@@ -28,4 +28,4 @@ spec:
   ports:
   - port: 80
     targetPort: 80
-  type: ClusterIP  # 之後改LoadBalancer公開
+  type: LoadBalancer  # ClusterIP之後改成LoadBalancer公開
