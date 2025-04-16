@@ -47,7 +47,10 @@ resource "google_container_node_pool" "primary_nodes" {
   cluster    = google_container_cluster.example.name
   location   = "asia-east1"
   node_count = 2  # 2個VM，滿足項目要求
-
+  autoscaling {
+    min_node_count = 1
+    max_node_count = 3
+  }
   node_config {
     machine_type = "e2-medium"  # 小型機器，慳成本
     disk_size_gb = 20
